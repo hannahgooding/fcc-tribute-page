@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1em;
+  text-align: center;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template: 1fr;
+}
+
+#nav {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #ffffff;
+}
+
+#nav a {
+  padding: 0.5em;
+  font-size: 1em;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2.5em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+#nav a:hover {
+  color: #f1082e;
+  cursor: url(https://imgur.com/8m673dE.png), auto !important;
+}
+
+#title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.8em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: #000000;
+  background-color: #bbdef2;
+  padding-top: 0.5em;
+}
+
+#logo{
+  width: auto;
+  height: 2em;
+}
+
+#img-div {
+  background-color: #bbdef2;
+}
+
+#image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+  display: block;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+#img-caption {
+  text-align: center;
+  padding: 0.5em;
+  font-size: 1.1em;
+  background-color: #ffffff;
+}
+
+#heading {
+  position: relative;
+  margin: 2em;
+}
+
+h1 {
+ font-family: 'Fredoka One', cursive;
+ font-size: 3em;
+ line-height: 2em;
+ letter-spacing: 0.05em;
+ position: absolute;
+ top: 85%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+
+#heading-img {
+  height: 10em;
+}
+
+#timeline {
+  padding-bottom: 2em;
+}
+
+time {
+  font-weight: bold;
+}
+
+#timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 0.4em;
+  margin: 0 auto;
+  padding-top: 2em;
+  background-color: #2876bc;
+}
+
+#timeline ul li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 4em;
+  height: 3em;
+  background-image: url("https://imgur.com/kwyhiIV.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 3em;
+}
+
+#timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 20em;
+  padding: 1em;
+  background: #bbdef2;
+  border-radius: 0.4em;
+}
+ 
+#timeline ul li div::before {
+  content: '';
+  position: absolute;
+  bottom: 0.5em;
+  border-style: solid;
+}
+
+#timeline ul li:nth-child(odd) div {
+  left: 3em;
+  background-color: #eaf5fb;
+}
+ 
+#timeline ul li:nth-child(odd) div::before {
+  left: -0.75em;
+  border-width: 0.5em 1em 0.5em 0;
+  border-color: transparent #eaf5fb transparent transparent;
+}
+
+#timeline ul li:nth-child(even) div {
+  left: -24.5em;
+}
+ 
+#timeline ul li:nth-child(even) div::before {
+  right: -0.75em;
+  border-width: 0.5em 0 0.5em 1em;
+  border-color: transparent transparent transparent #bbdef2;
+}
+
+#fact-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+  justify-items: center;
+}
+
+#fact-cards p {
+  background-color: #bbdef2;
+  width: 15em;
+  padding: 2em;
+  border-radius: 2em;
+}
+
+#fact-cards p:nth-child(even) {
+  background-color: #eaf5fb;
+}
+
+#footer {
+  padding-top: 5em;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  #nav {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  #nav a {
+    padding: 0em;
+    font-size: 0.8em;
+  }
+  #title {
+    font-size: 1.3em;
+    padding: 0.5em;
+  }
+  #image {
+    max-height: 175px;
+    padding: 1em;
+  }
+  #img-caption {
+    font-size: 0.9em;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  #heading-img {
+    height: 7em;
+  }
+  #timeline ul li {
+    margin-left: 2em;
+  }
+  #timeline ul li div {
+    width: 20em;
+  }
+  #timeline ul li:nth-child(even) div {
+    left: 3em;
+  }
+  #timeline ul li:nth-child(even) div::before {
+    right: 22em;
+    border-width: 0.5em 1em 0.5em 0;
+    border-color: transparent #bbdef2 transparent transparent;
+  }
+  #fact-cards {
+    grid-template-columns: 1fr;
+    grid-gap: 0.1em;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 600px) {
+  #fact-cards {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+}
